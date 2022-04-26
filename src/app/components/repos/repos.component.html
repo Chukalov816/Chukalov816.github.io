@@ -1,0 +1,9 @@
+<form class="container add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Username</label>
+        <input type="text" name="username" [(ngModel)]="username" id="username" placeholder="Type in Username">
+    </div>
+    <input type="submit" value="Search" class="btn btn-block">
+
+</form>
+<app-repo *ngFor="let repo of repos" [repo]="repo"></app-repo>

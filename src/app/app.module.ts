@@ -7,12 +7,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { IssuesComponent } from './components/issues/issues.component';
+import { NavComponent } from './components/nav/nav.component';
+import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/about/about.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import { ReposComponent } from './components/repos/repos.component';
+import { RepoComponent } from './components/repo/repo.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    IssuesComponent
+    IssuesComponent,
+    NavComponent,
+    LoginComponent,
+    AboutComponent,
+    CommentsComponent,
+    ReposComponent,
+    RepoComponent,
   ],
   imports: [
     BrowserModule,

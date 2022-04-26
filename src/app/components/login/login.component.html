@@ -1,0 +1,12 @@
+<form class="container add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Username</label>
+        <input type="text" name="username" [(ngModel)]="username" id="username" placeholder="Type in Username">
+    </div>
+    <div class="form-control">
+        <label for="day">Password</label>
+        <input type="text" name="repository" [(ngModel)]="password" id="password" placeholder="Type in password">
+    </div>
+    <input type="submit" value="Search" class="btn btn-block">
+
+</form>

@@ -21,11 +21,11 @@ repository:string='';
   ngOnInit(): void {
   }
   onSubmit(){
-this.userService.getRepo(this.username,this.repository).subscribe((data)=>(this.issues=data)
+this.userService.getIssues(this.username,this.repository).subscribe((data)=>(this.issues=data)
 );
+this.username='';
+this.repository='';
+console.log(this.issues);
 
-
-
-    
   }
 }
