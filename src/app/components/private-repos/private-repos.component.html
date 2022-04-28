@@ -5,7 +5,7 @@
     </div>
     <div class="form-control">
         <label for="day">Repository</label>
-        <input type="text" name="repository" [(ngModel)]="password" id="repository" placeholder="Type in your Github repository">
+        <input type="text" name="repository" [(ngModel)]="repository" id="repository" placeholder="Type in your Github repository">
     </div>
     <div class="form-control">
         <label for="day">Token</label>
@@ -16,5 +16,10 @@
 </form>
 <div class="message-orange" *ngIf="hasError;else noError">Please verify your username, repository or token, and try again</div>
 <ng-template #noError>
+    <div>
+        <p class="current">{{currentUser}}</p>
+        <p class="current">{{currentRepo}}</p>
+
+    </div>
     <app-private-repo *ngFor="let privateIssue of privateIssues" [privateIssue]="privateIssue"></app-private-repo>
 </ng-template>

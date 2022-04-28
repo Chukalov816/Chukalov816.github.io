@@ -12,5 +12,10 @@
 </form>
 <div class="message-orange" *ngIf="hasError;else noError">Please verify the username and repository and try again!</div>
 <ng-template #noError>
+    <div>
+        <p class="current">{{currentUser}}</p>
+        <p class="current">{{currentRepo}}</p>
+
+    </div>
     <app-issues *ngFor="let issue of issues" [issue]="issue"></app-issues>
 </ng-template>

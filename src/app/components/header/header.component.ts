@@ -15,6 +15,9 @@ issues:string[]=[];
 username:string='';
 repository:string='';
 hasError:boolean=false;
+currentUser:string='';
+currentRepo:string='';
+
 
 
   constructor(private userService:UserService) { }
@@ -23,6 +26,8 @@ hasError:boolean=false;
   }
   onSubmit(){
     this.hasError = false;
+    this.currentUser=`Current username: ${this.username}`
+    this.currentRepo=`Current repo: ${this.repository}`;
     this.userService.getIssues(this.username, this.repository).subscribe(
       (data) => (this.issues = data),
       (error) => this.hasError = true,

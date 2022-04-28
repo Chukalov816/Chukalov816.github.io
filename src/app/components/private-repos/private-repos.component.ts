@@ -9,10 +9,11 @@ import { UserService } from 'src/app/services/user.service';
 export class PrivateReposComponent implements OnInit {
   privateIssues: string[] = [];
   username: string = '';
-  password: string = '';
+  repository: string = '';
   token: string = '';
   hasError: boolean = false;
-
+  currentUser:string='';
+  currentRepo:string='';
 
   constructor(private userService: UserService) { }
 
@@ -20,13 +21,15 @@ export class PrivateReposComponent implements OnInit {
   }
   onSubmit() {
     this.hasError = false;
-    this.userService.getPrivateIssues(this.username, this.password, this.token).subscribe(
+    this.currentUser=`Current username: ${this.username}`;
+    this.currentRepo=`Current repo: ${this.repository}`;
+    this.userService.getPrivateIssues(this.username, this.repository, this.token).subscribe(
       (data) => (this.privateIssues = data),
       (error) => this.hasError = true,
     );
 
     this.username = '';
-    this.password = '';
+    this.repository = '';
     this.token = '';
 
 

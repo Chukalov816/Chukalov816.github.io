@@ -10,13 +10,14 @@ export class ReposComponent implements OnInit {
   repos: string[] = [];
   username: string = '';
   hasError: boolean = false;
-
+  currentUser:string='';
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
   onSubmit() {
     this.hasError = false;
+    this.currentUser=`Current username: ${this.username}`;
     this.userService.getRepos(this.username).subscribe(
       (data) => (this.repos = data),
       (error) => this.hasError = true,

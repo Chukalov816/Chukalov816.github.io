@@ -8,5 +8,9 @@
 </form>
 <div class="message-orange" *ngIf="hasError;else noError">Please verify the username and try again!</div>
 <ng-template #noError>
+    <div>
+        <p class="current">{{currentUser}}</p>
+    </div>
+
     <app-repo *ngFor="let repo of repos" [repo]="repo"></app-repo>
 </ng-template>
