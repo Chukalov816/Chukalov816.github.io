@@ -10,9 +10,11 @@ import { IssuesComponent } from './components/issues/issues.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
-import { CommentsComponent } from './components/comments/comments.component';
+
 import { ReposComponent } from './components/repos/repos.component';
 import { RepoComponent } from './components/repo/repo.component';
+import { PrivateReposComponent } from './components/private-repos/private-repos.component';
+import { PrivateRepoComponent } from './components/private-repo/private-repo.component';
 
 
 @NgModule({
@@ -23,9 +25,10 @@ import { RepoComponent } from './components/repo/repo.component';
     NavComponent,
     LoginComponent,
     AboutComponent,
-    CommentsComponent,
     ReposComponent,
     RepoComponent,
+    PrivateReposComponent,
+    PrivateRepoComponent,
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,7 @@ this.userService.getIssues(this.username,this.repository).subscribe((data)=>(thi
 );
 this.username='';
 this.repository='';
-console.log(this.issues);
+
 
   }
 }

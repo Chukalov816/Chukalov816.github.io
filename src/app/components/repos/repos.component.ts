@@ -17,8 +17,7 @@ export class ReposComponent implements OnInit {
   onSubmit() {
     this.userService.getRepos(this.username).subscribe((data) => (this.repos = data)
     );
-    console.log(this.repos);
-    
+
     this.username = '';
   }
 }

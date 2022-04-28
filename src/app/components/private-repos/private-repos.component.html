@@ -1,0 +1,17 @@
+<form class="container add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Username</label>
+        <input type="text" name="username" [(ngModel)]="username" id="username" placeholder="Type in your Github Username">
+    </div>
+    <div class="form-control">
+        <label for="day">Repository</label>
+        <input type="text" name="repository" [(ngModel)]="password" id="repository" placeholder="Type in your Github repository">
+    </div>
+    <div class="form-control">
+        <label for="day">Token</label>
+        <input type="text" name="token" [(ngModel)]="token" id="token" placeholder="Type in your Github token">
+    </div>
+    <input type="submit" value="Search" class="btn btn-block">
+
+</form>
+<app-private-repo *ngFor="let privateIssue of privateIssues" [privateIssue]="privateIssue"></app-private-repo>
