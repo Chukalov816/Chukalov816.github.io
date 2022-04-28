@@ -10,4 +10,7 @@
     <input type="submit" value="Search" class="btn btn-block">
 
 </form>
-<app-issues *ngFor="let issue of issues" [issue]="issue"></app-issues>
+<div class="message-orange" *ngIf="hasError;else noError">Please verify the username and repository and try again!</div>
+<ng-template #noError>
+    <app-issues *ngFor="let issue of issues" [issue]="issue"></app-issues>
+</ng-template>

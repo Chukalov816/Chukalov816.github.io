@@ -9,15 +9,23 @@ import { UserService } from 'src/app/services/user.service';
 export class ReposComponent implements OnInit {
   repos: string[] = [];
   username: string = '';
+  hasError: boolean = false;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
   onSubmit() {
-    this.userService.getRepos(this.username).subscribe((data) => (this.repos = data)
+    this.hasError = false;
+    this.userService.getRepos(this.username).subscribe(
+      (data) => (this.repos = data),
+      (error) => this.hasError = true,
     );
 
+
+
     this.username = '';
+
+
   }
 }

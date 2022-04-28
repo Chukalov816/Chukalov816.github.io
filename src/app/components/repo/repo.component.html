@@ -1,7 +1,10 @@
 <div class="center">
     <p>{{repo.name}}</p>
     <button (click)="toggle()">{{buttonName}}</button>
-    <p *ngIf="show">
-        {{repo.description}}
-    </p>
+    <div *ngIf="show">
+        <p>
+            {{repo.description}}
+        </p>
+    </div>
+
 </div>

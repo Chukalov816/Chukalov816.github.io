@@ -14,6 +14,7 @@ issues:string[]=[];
 
 username:string='';
 repository:string='';
+hasError:boolean=false;
 
 
   constructor(private userService:UserService) { }
@@ -21,8 +22,12 @@ repository:string='';
   ngOnInit(): void {
   }
   onSubmit(){
-this.userService.getIssues(this.username,this.repository).subscribe((data)=>(this.issues=data)
-);
+    this.hasError = false;
+    this.userService.getIssues(this.username, this.repository).subscribe(
+      (data) => (this.issues = data),
+      (error) => this.hasError = true,
+    );
+
 this.username='';
 this.repository='';
 

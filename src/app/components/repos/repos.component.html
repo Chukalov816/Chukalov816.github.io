@@ -6,4 +6,7 @@
     <input type="submit" value="Search" class="btn btn-block">
 
 </form>
-<app-repo *ngFor="let repo of repos" [repo]="repo"></app-repo>
+<div class="message-orange" *ngIf="hasError;else noError">Please verify the username and try again!</div>
+<ng-template #noError>
+    <app-repo *ngFor="let repo of repos" [repo]="repo"></app-repo>
+</ng-template>

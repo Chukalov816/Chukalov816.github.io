@@ -10,21 +10,25 @@ export class PrivateReposComponent implements OnInit {
   privateIssues: string[] = [];
   username: string = '';
   password: string = '';
-  token:string='';
+  token: string = '';
+  hasError: boolean = false;
+
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
-  onSubmit(){
-    this.userService.getPrivateIssues(this.username,this.password,this.token).subscribe((data)=>(this.privateIssues=data)
+  onSubmit() {
+    this.hasError = false;
+    this.userService.getPrivateIssues(this.username, this.password, this.token).subscribe(
+      (data) => (this.privateIssues = data),
+      (error) => this.hasError = true,
     );
-    
-    
-    this.username='';
-    this.password='';
-    this.token='';
-    
-    
-      }
+
+    this.username = '';
+    this.password = '';
+    this.token = '';
+
+
+  }
 }

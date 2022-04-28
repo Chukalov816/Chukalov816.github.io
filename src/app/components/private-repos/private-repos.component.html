@@ -14,4 +14,7 @@
     <input type="submit" value="Search" class="btn btn-block">
 
 </form>
-<app-private-repo *ngFor="let privateIssue of privateIssues" [privateIssue]="privateIssue"></app-private-repo>
+<div class="message-orange" *ngIf="hasError;else noError">Please verify your username, repository or token, and try again</div>
+<ng-template #noError>
+    <app-private-repo *ngFor="let privateIssue of privateIssues" [privateIssue]="privateIssue"></app-private-repo>
+</ng-template>

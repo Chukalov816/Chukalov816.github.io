@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { NavComponent } from './components/nav/nav.component';
-import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 
 import { ReposComponent } from './components/repos/repos.component';
@@ -23,7 +22,6 @@ import { PrivateRepoComponent } from './components/private-repo/private-repo.com
     HeaderComponent,
     IssuesComponent,
     NavComponent,
-    LoginComponent,
     AboutComponent,
     ReposComponent,
     RepoComponent,
